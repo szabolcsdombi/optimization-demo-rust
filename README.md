@@ -1,4 +1,4 @@
-# c-rust-python
+# optimization-demo-rust
 
 This is an extension to my original [optimization-demo](https://github.com/szabolcsdombi/optimization-demo) article.
 
