@@ -20,7 +20,7 @@ The method itself will not be implemented in Python, but it will be **available*
 
 ## Results
 
-```py
+```
 ----------------------------------------------------------------------------------------------------------
 Name (time in ns)            Mean            StdDev                Median           OPS (Kops/s)          
 ----------------------------------------------------------------------------------------------------------
