@@ -1,0 +1,13 @@
+[package]
+name = "mymodule"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libc = "0.2.31"
+base64 = "0.10.0"
+sha-1 = "0.8"
+
+[lib]
+name = "mymodule"
+crate-type = ["staticlib"]

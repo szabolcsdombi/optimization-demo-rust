@@ -271,8 +271,23 @@ PyObject * c_accept(PyObject * self, PyObject * arg) {
     return PyUnicode_FromStringAndSize(result, 28);
 }
 
+extern "C" void rust_accept(const char * key, char * result);
+
+PyObject * meth_rust_accept(PyObject * self, PyObject * arg) {
+    char result[28];
+    Py_ssize_t len = 0;
+    const char * key = PyUnicode_AsUTF8AndSize(arg, &len);
+    if (!key || len != 24) {
+        PyErr_SetString(PyExc_ValueError, "invalid key");
+        return NULL;
+    }
+    rust_accept(key, result);
+    return PyUnicode_FromStringAndSize(result, 28);
+}
+
 PyMethodDef module_methods[] = {
     {"c_accept", (PyCFunction)c_accept, METH_O, NULL},
+    {"rust_accept", (PyCFunction)meth_rust_accept, METH_O, NULL},
     {},
 };
 

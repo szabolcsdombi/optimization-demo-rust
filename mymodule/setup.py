@@ -5,8 +5,8 @@ ext = Extension(
     sources=['./mymodule.cpp'],
     define_macros=[('PY_SSIZE_T_CLEAN', None)],
     include_dirs=[],
-    library_dirs=[],
-    libraries=[],
+    library_dirs=['rust/target/release'],
+    libraries=['mymodule'],
 )
 
 setup(

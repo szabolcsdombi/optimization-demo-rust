@@ -1,7 +1,7 @@
 from base64 import b64encode
 from hashlib import sha1
 
-from mymodule import c_accept
+from mymodule import c_accept, rust_accept
 
 
 def py_accept(key: str) -> str:
@@ -18,6 +18,10 @@ def test_python_code(benchmark):
 
 def test_optimized_code(benchmark):
     assert benchmark(c_accept, 'dGhlIHNhbXBsZSBub25jZQ==') == 's3pPLMBiTxaQ9kYGzzhZRbK+xOo='
+
+
+def test_rust_code(benchmark):
+    assert benchmark(rust_accept, 'dGhlIHNhbXBsZSBub25jZQ==') == 's3pPLMBiTxaQ9kYGzzhZRbK+xOo='
 
 
 # def test_magic_code(benchmark):
